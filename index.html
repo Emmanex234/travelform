@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>US Visa Interview Preparation Form</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes pulseBorder {
+            0% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4); }
+            70% { box-shadow: 0 0 0 8px rgba(59, 130, 246, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); }
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+        .animate-pulse-border {
+            animation: pulseBorder 2s infinite;
+        }
+        .form-section {
+            transition: all 0.5s ease;
+        }
+        .question-card {
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+        }
+        .question-card:hover {
+            border-left-color: #3b82f6;
+            background-color: #f8fafc;
+        }
+        .question-card:focus-within {
+            border-left-color: #3b82f6;
+            background-color: #f0f9ff;
+        }
+        .nav-btn {
+            transition: all 0.3s ease;
+        }
+        .nav-btn:hover {
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen font-sans">
+    <div class="container mx-auto px-4 py-12 max-w-4xl">
+        <!-- Header -->
+        <header class="text-center mb-12 animate-fade-in" style="animation-delay: 0.1s;">
+            <div class="inline-block p-4 bg-white rounded-full shadow-md mb-4 animate-pulse-border">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+            </div>
+            <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-3">US Visa Interview Preparation</h1>
+            <p class="text-gray-600">Complete this form to prepare for your visa interview when visiting friends</p>
+            <div class="w-24 h-1.5 bg-blue-500 mx-auto mt-4 rounded-full"></div>
+        </header>
+
+        <!-- Progress indicator -->
+        <div class="bg-white rounded-lg shadow-sm mb-8 overflow-hidden animate-fade-in" style="animation-delay: 0.2s;">
+            <div class="h-2 bg-blue-100">
+                <div class="h-full bg-blue-600 transition-all duration-500 ease-out" style="width: 16%;" id="progressBar"></div>
+            </div>
+            <div class="px-4 py-2 text-sm text-gray-600 text-center">
+                Section <span id="currentSection">1</span> of 6
+            </div>
+        </div>
+
+        <!-- Main Form -->
+        <form class="bg-white rounded-xl shadow-md overflow-hidden animate-fade-in" style="animation-delay: 0.3s;">
+            <!-- Section 1: Purpose of Visit -->
+            <div class="form-section p-6 md:p-8" data-section="1">
+                <h2 class="text-xl font-semibold text-gray-800 mb-6 flex items-center">
+                    <span class="flex items-center justify-center w-8 h-8 bg-blue-600 text-white rounded-full mr-3">1</span>
+                    Purpose of Your Visit
+                </h2>
+                
+                <div class="space-y-6">
+                    <!-- Question 1 -->
+                    <div class="question-card pl-4 py-4 rounded-lg">
+                        <label class="block text-gray-700 font-medium mb-2">1. What is the reason for your visit to the United States?</label>
+                        <div class="space-y-3 mt-3">
+                            <div class="flex items-center">
+                                <input type="radio" id="visit_reason1" name="visit_reason" value="visiting_friend" class="h-4 w-4 text-blue-600 focus:ring-blue-500">
+                                <label for="visit_reason1" class="ml-3 block text-gray-700">Visiting a friend</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="radio" id="visit_reason2" name="visit_reason" value="social_event" class="h-4 w-4 text-blue-600 focus:ring-blue-500">
+                                <label for="visit_reason2" class="ml-3 block text-gray-700">Attending a social event</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="radio" id="visit_reason3" name="visit_reason" value="other" class="h-4 w-4 text-blue-600 focus:ring-blue-500">
+                                <label for="visit_reason3" class="ml-3 block text-gray-700">Other (please specify)</label>
+                                <input type="text" name="visit_reason_other" class="ml-8 mt-2 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 hidden" placeholder="Specify your reason">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Question 2 -->
+                    <div class="question-card pl-4 py-4 rounded-lg">
+                        <label class="block text-gray-700 font-medium mb-2">2. How long do you intend to stay in the United States?</label>
+                        <div class="grid grid-cols-2 md:grid-cols-3 gap-3 mt-3">
+                            <div class="flex items-center">
+                                <input type="radio" id="duration1" name="duration" value="1_week" class="h-4 w-4 text-blue-600 focus:ring-blue-500">
+                                <label for="duration1" class="ml-2 block text-gray-700">1 week</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="radio" id="duration2" name="duration" value="2_weeks" class="h-4 w-4 text-blue-600 focus:ring-blue-500">
+                                <label for="duration2" class="ml-2 block text-gray-700">2 weeks</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="radio" id="duration3" name="duration" value="1_month" class="h-4 w-4 text-blue-600 focus:ring-blue-500">
+                                <label for="duration3" class="ml-2 block text-gray-700">1 month</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="radio" id="duration4" name="duration" value="3_months" class="h-4 w-4 text-blue-600 focus:ring-blue-500">
+                                <label for="duration4" class="ml-2 block text-gray-700">3 months</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="radio" id="duration5" name="duration" value="other" class="h-4 w-4 text-blue-600 focus:ring-blue-500">
+                                <label for="duration5" class="ml-2 block text-gray-700">Other</label>
+                                <input type="text" name="duration_other" class="ml-2 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 hidden" placeholder="Specify duration">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Question 3 -->
+                    <div class="question-card pl-4 py-4 rounded-lg">
+                        <label for="meeting_who" class="block text-gray-700 font-medium mb-2">3. Who will you be meeting in the United States?</label>
+                        <input type="text" id="meeting_who" name="meeting_who" class="mt-2 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" placeholder="Friend's full name">
+                        <div class="mt-3 grid grid-cols-2 gap-3">
+                            <div>
+                                <label for="relationship" class="block text-sm text-gray-600 mb-1">Relationship</label>
+                                <select id="relationship" name="relationship" class="block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                                    <option value="">Select relationship</option>
+                                    <option value="friend">Friend</option>
+                                    <option value="colleague">Colleague</option>
+                                    <option value="relative">Relative</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="friend_phone" class="block text-sm text-gray-600 mb-1">Friend's US Phone</label>
+                                <input type="tel" id="friend_phone" name="friend_phone" class="block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" placeholder="+1 (___) ___-____">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Question 4 -->
+                    <div class="question-card pl-4 py-4 rounded-lg">
+                        <label for="activities" class="block text-gray-700 font-medium mb-2">4. What activities will you participate in together?</label>
+                        <textarea id="activities" name="activities" rows="3" class="mt-2 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" placeholder="Describe planned activities (e.g., sightseeing, attending wedding, etc.)"></textarea>
+                    </div>
+                    
+                    <!-- Question 5 -->
+                    <div class="question-card pl-4 py-4 rounded-lg">
+                        <label class="block text-gray-700 font-medium mb-2">5. Have you visited the United States before?</label>
+                        <div class="flex space-x-6 mt-3">
+                            <div class="flex items-center">
+                                <input type="radio" id="visited_yes" name="visited_before" value="yes" class="h-4 w-4 text-blue-600 focus:ring-blue-500">
+                                <label for="visited_yes" class="ml-2 block text-gray-700">Yes</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="radio" id="visited_no" name="visited_before" value="no" class="h-4 w-4 text-blue-600 focus:ring-blue-500">
+                                <label for="visited_no" class="ml-2 block text-gray-700">No</label>
+                            </div>
+                        </div>
+                        <div id="visited_details" class="mt-3 hidden">
+                            <label for="previous_visits" class="block text-sm text-gray-600 mb-1">Details of previous visits</label>
+                            <textarea id="previous_visits" name="previous_visits" rows="2" class="block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" placeholder="When and purpose of previous visits"></textarea>
+                        </div>
+                    </div>
+                    
+                    <!-- Question 6 -->
+                    <div class="question-card pl-4 py-4 rounded-lg">
+                        <label class="block text-gray-700 font-medium mb-2">6. Do you have any other plans in the US other than visiting your friend?</label>
+                        <div class="flex space-x-6 mt-3">
+                            <div class="flex items-center">
+                                <input type="radio" id="other_plans_yes" name="other_plans" value="yes" class="h-4 w-4 text-blue-600 focus:ring-blue-500">
+                                <label for="other_plans_yes" class="ml-2 block text-gray-700">Yes</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="radio" id="other_plans_no" name="other_plans" value="no" class="h-4 w-4 text-blue-600 focus:ring-blue-500">
+                                <label for="other_plans_no" class="ml-2 block text-gray-700">No</label>
+                            </div>
+                        </div>
+                        <div id="other_plans_details" class="mt-3 hidden">
+                            <label for="additional_plans" class="block text-sm text-gray-600 mb-1">Please explain</label>
+                            <textarea id="additional_plans" name="additional_plans" rows="2" class="block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" placeholder="Describe your other plans"></textarea>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flex justify-end mt-8">
+                    <button type="button" class="next-section px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-300 shadow-md hover:shadow-lg nav-btn">
+                        Next: About Your Friend →
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Section 2: About Your Friend -->
+            <div class="form-section p-6 md:p-8 hidden" data-section="2">
+                <h2 class="text-xl font-semibold text-gray-800 mb-6 flex items-center">
+                    <span class="flex items-center justify-center w-8 h-8 bg-blue-600 text-white rounded-full mr-3">2</span>
+                    About Your Friend in the US
+                </h2>
+                
+                <div class="space-y-6">
+                    <!-- Question 1 -->
+                    <div class="question-card pl-4 py-4 rounded-lg">
+                        <label for="how_met" class="block text-gray-700 font-medium mb-2">1. When and how did you meet your friend?</label>
+                        <textarea id="how_met" name="how_met" rows="3" class="mt-2 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" placeholder="Explain how your friendship began"></textarea>
+                    </div>
+                    
+                    <!-- Question 2 -->
+                    <div class="question-card pl-4 py-4 rounded-lg">
+                        <label for="friend_address" class="block text-gray-700 font-medium mb-2">2. Where does your friend live in the United States?</label>
+                        <textarea id="friend_address" name="friend_address" rows="2" class="mt-2 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" placeholder="Full address including city and state"></textarea>
+                    </div>
+                    
+                    <!-- Question 3 -->
+                    <div class="question-card pl-4 py-4 rounded-lg">
+                        <label for="friend_status" class="block text-gray-700 font-medium mb-2">3. What is their job or educational status?</label>
+                        <div class="mt-3">
+                            <div class="flex items-center mb-2">
+                                <input type="radio" id="status_working" name="friend_status" value="working" class="h-4 w-4 text-blue-600 focus:ring-blue-500">
+                                <label for="status_working" class="ml-2 block text-gray-700">Working</label>
+                            </div>
+                            <div class="flex items-center mb-2">
+                                <input type="radio" id="status_student" name="friend_status" value="student" class="h-4 w-4 text-blue-600 focus:ring-blue-500">
+                                <label for="status_student" class="ml-2 block text-gray-700">Student</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="radio" id="status_other" name="friend_status" value="other" class="h-4 w-4 text-blue-600 focus:ring-blue-500">
+                                <label for="status_other" class="ml-2 block text-gray-700">Other</label>
+                                <input type="text" name="friend_status_other" class="ml-2 mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 hidden" placeholder="Specify status">
+                            </div>
+                        </div>
+                        <div class="mt-3">
+                            <label for="friend_job_details" class="block text-sm text-gray-600 mb-1">Details (company/school name)</label>
+                            <input type="text" id="friend_job_details" name="friend_job_details" class="block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" placeholder="Where they work/study">
+                        </div>
+                    </div>
+                    
+                    <!-- Question 4 -->
+                    <div class="question-card pl-4 py-4 rounded-lg">
+                        <label class="block text-gray-700 font-medium mb-2">4. Does your friend have any relatives in the United States?</label>
+                        <div class="flex space-x-6 mt-3">
+                            <div class="flex items-center">
+                                <input type="radio" id="relatives_yes" name="friend_relatives" value="yes" class="h-4 w-4 text-blue-600 focus:ring-blue-500">
+                                <label for="relatives_yes" class="ml-2 block text-gray-700">Yes</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="radio" id="relatives_no" name="friend_relatives" value="no" class="h-4 w-4 text-blue-600 focus:ring-blue-500">
+                                <label for="relatives_no" class="ml-2 block text-gray-700">No</label>
+                            </div>
+                        </div>
+                        <div id="relatives_details" class="mt-3 hidden">
+                            <label for="friend_relatives_names" class="block text-sm text-gray-600 mb-1">Names of relatives</label>
+                            <textarea id="friend_relatives_names" name="friend_relatives_names" rows="2" class="block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" placeholder="List names and relationships"></textarea>
+                        </div>
+                    </div>
+                    
+                    <!-- Question 5 -->
+                    <div class="question-card pl-4 py-4 rounded-lg">
+                        <label class="block text-gray-700 font-medium mb-2">5. Do you have any other connections in the United States?</label>
+                        <div class="flex space-x-6 mt-3">
+                            <div class="flex items-center">
+                                <input type="radio" id="connections_yes" name="other_connections" value="yes" class="h-4 w-4 text-blue-600 focus:ring-blue-500">
+                                <label for="connections_yes" class="ml-2 block text-gray-700">Yes</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="radio" id="connections_no" name="other_connections" value="no" class="h-4 w-4 text-blue-600 focus:ring-blue-500">
+                                <label for="connections_no" class="ml-2 block text-gray-700">No</label>
+                            </div>
+                        </div>
+                        <div id="connections_details" class="mt-3 hidden">
+                            <label for="other_connections_names" class="block text-sm text-gray-600 mb-1">Details of other connections</label>
+                            <textarea id="other_connections_names" name="other_connections_names" rows="2" class="block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" placeholder="List names and relationships"></textarea>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flex justify-between mt-8">
+                    <button type="button" class="prev-section px-6 py-3 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition duration-300 shadow-md nav-btn">
+                        ← Previous
+                    </button>
+                    <button type="button" class="next-section px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-300 shadow-md hover:shadow-lg nav-btn">
+                        Next: Financial Situation →
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Section 3: Financial Situation -->
+            <div class="form-section p-6 md:p-8 hidden" data-section="3">
+                <h2 class="text-xl font-semibold text-gray-800 mb-6 flex items-center">
+                    <span class="flex items-center justify-center w-8 h-8 bg-blue-600 text-white rounded-full mr-3">3</span>
+                    Financial Situation & Travel Costs
+                </h2>
+                
+                <div class="space-y-6">
+                    <!-- Question 1 -->
+                    <div class="question-card pl-4 py-4 rounded-lg">
+                        <label class="block text-gray-700 font-medium mb-2">1. Who will cover the costs of your trip?</label>
+                        <div class="space-y-3 mt-3">
+                            <div class="flex items-center">
+                                <input type="radio" id="payer_self" name="trip_payer" value="self" class="h-4 w-4 text-blue-600 focus:ring-blue-500">
+                                <label for="payer_self" class="ml-2 block text-gray-700">Myself</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="radio" id="payer_friend" name="trip_payer" value="friend" class="h-4 w-4 text-blue-600 focus:ring-blue-500">
+                                <label for="payer_friend" class="ml-2 block text-gray-700">My friend in the US</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="radio" id="payer_family" name="trip_payer" value="family" class="h-4 w-4 text-blue-600 focus:ring-blue-500">
+                                <label for="payer_family" class="ml-2 block text-gray-700">Family member</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="radio" id="payer_other" name="trip_payer" value="other" class="h-4 w-4 text-blue-600 focus:ring-blue-500">
+                                <label for="payer_other" class="ml-2 block text-gray-700">Other</label>
+                                <input type="text" name="trip_payer_other" class="ml-2 mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 hidden" placeholder="Specify who">
+                            </div>
+                        </div>
+                        <div id="payer_details" class="mt-3 hidden">
+                            <label for="payer_name" class="block text-sm text-gray-600 mb-1">Payer's name and relationship</label>
+                            <input type="text" id="payer_name" name="payer_name" class="block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" placeholder="Name and how they're related to you">
+                        </div>
+                    </div>
+                    
+                    <!-- Question 2 -->
+                    <div class="question-card pl-4 py-4 rounded-lg">
+                        <label class="block text-gray-700 font-medium mb-2">2. Do you have documents proving your ability to cover travel expenses?</label>
+                        <div class="flex space-x-6 mt-3">
+                            <div class="flex items-center">
+                                <input type="radio" id="docs_yes" name="financial_docs" value="yes" class="h-4 w-4 text-blue-600 focus:ring-blue-500">
+                                <label for="docs_yes" class="ml-2 block text-gray-700">Yes</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="radio" id="docs_no" name="financial_docs" value="no" class="h-4 w-4 text-blue-600 focus:ring-blue-500">
+                                <label for="docs_no" class="ml-2 block text-gray-700">No</label>
+                            </div>
+                        </div>
+                        <div id="docs_details" class="mt-3 hidden">
+                            <label class="block text-sm text-gray-600 mb-1">What documents do you have?</label>
+                            <div class="space-y-2">
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="doc_bank" name="doc_bank" class="h-4 w-4 text-blue-600 focus:ring-blue-500">
+                                    <label for="doc_bank" class="ml-2 block text-gray-700">Bank statements</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="doc_employment" name="doc_employment" class="h-4 w-4 text-blue-600 focus:ring-blue-500">
+                                    <label for="doc_employment" class="ml-2 block text-gray-700">Employment letter</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="doc_sponsor" name="doc_sponsor" class="h-4 w-4 text-blue-600 focus:ring-blue-500">
+                                    <label for="doc_sponsor" class="ml-2 block text-gray-700">Sponsor letter</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="doc_other" name="doc_other" class="h-4 w-4 text-blue-600 focus:ring-blue-500">
+                                    <label for="doc_other" class="ml-2 block text-gray-700">Other</label>
+                                    <input type="text" name="doc_other_specify" class="ml-2 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 hidden" placeholder="Specify documents">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Question 3 -->
+                    <div class="question-card pl-4 py-4 rounded-lg">
+                        <label class="block text-gray-700 font-medium mb-2">3. Do you have a job or business of your own?</label>
+                        <div class="flex space-x-6 mt-3">
+                            <div class="flex items-center">
+                                <input type="radio" id="employment_yes" name="employment" value="yes" class="h-4 w-4 text-blue-600 focus:ring-blue-500">
+                                <label for="employment_yes" class="ml-2 block text-gray-700">Yes</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="radio" id="employment_no" name="employment" value="no" class="h-4 w-4 text-blue-600 focus:ring-blue-500">
+                                <label for="employment_no" class="ml-2 block text-gray-700">No</label>
+                            </div>
+                        </div>
+                        <div id="employment_details" class="mt-3 hidden">
+                            <label for="employment_info" class="block text-sm text-gray-600 mb-1">Details about your job/business</label>
+                            <textarea id="employment_info" name="employment_info" rows="3" class="block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" placeholder="Company name, position, how long employed"></textarea>
+                        </div>
+                    </div>
+                    
+                    <!-- Question 4 -->
+                    <div class="question-card pl-4 py-4 rounded-lg">
+                        <label class="block text-gray-700 font-medium mb-2">4. Do you have any property or assets?</label>
+                        <div class="flex space-x-6 mt-3">
+                            <div class="flex items-center">
+                                <input type="radio" id="assets_yes" name="assets" value="yes" class="h-4 w-4 text-blue-600 focus:ring-blue-500">
+                                <label for="assets_yes" class="ml-2 block text-gray-700">Yes</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="radio" id="assets_no" name="assets" value="no" class="h-4 w-4 text-blue-600 focus:ring-blue-500">
+                                <label for="assets_no" class="ml-2 block text-gray-700">No</label>
+                            </div>
+                        </div>
+                        <div id="assets_details" class="mt-3 hidden">
+                            <label class="block text-sm text-gray-600 mb-1">What property/assets do you own?</label>
+                            <div class="space-y-2">
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="asset_house" name="asset_house" class="h-4 w-4 text-blue-600 focus:ring-blue-500">
+                                    <label for="asset_house" class="ml-2 block text-gray-700">House/Apartment</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="asset_car" name="asset_car" class="h-4 w-4 text-blue-600 focus:ring-blue-500">
+                                    <label for="asset_car" class="ml-2 block text-gray-700">Car</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="asset_land" name="asset_land" class="h-4 w-4 text-blue-600 focus:ring-blue-500">
+                                    <label for="asset_land" class="ml-2 block text-gray-700">Land</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="asset_other" name="asset_other" class="h-4 w-4 text-blue-600 focus:ring-blue-500">
+                                    <label for="asset_other" class="ml-2 block text-gray-700">Other</label>
+                                    <input type="text" name="asset_other_specify" class="ml-2 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 hidden" placeholder="Specify assets">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flex justify-between mt-8">
+                    <button type="button" class="prev-section px-6 py-3 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition duration-300 shadow-md nav-btn">
+                        ← Previous
+                    </button>
+                    <button type="button" class="next-section px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-300 shadow-md hover:shadow-lg nav-btn">
+                        Next: Ties to Home Country →
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Section 4: Ties to Home Country -->
+            <div class="form-section p-6 md:p-8 hidden" data-section="4">
+                <h2 class="text-xl font-semibold text-gray-800 mb-6 flex items-center">
+                    <span class="flex items-center justify-center w-8 h-8 bg-blue-600 text-white rounded-full mr-3">4</span>
+                    Ties to Your Home Country
+                </h2>
+                
+                <div class="space-y-6">
+                    <!-- Question 1 -->
+                    <div class="question-card pl-4 py-4 rounded-lg">
+                        <label class="block text-gray-700 font-medium mb-2">1. Do you have family and friends in your country?</label>
+                        <div class="flex space-x-6 mt-3">
+                            <div class="flex items-center">
+                                <input type="radio" id="family_yes" name="family_home" value="yes" class="h-4 w-4 text-blue-600 focus:ring-blue-500">
+                                <label for="family_yes" class="ml-2 block text-gray-700">Yes</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="radio" id="family_no" name="family_home" value="no" class="h-4 w-4 text-blue-600 focus:ring-blue-500">
+                                <label for="family_no" class="ml-2 block text-gray-700">No</label>
+                            </div>
+                        </div>
+                        <div id="family_details" class="mt-3 hidden">
+                            <label for="family_names" class="block text-sm text-gray-600 mb-1">Names of immediate family members</label>
+                            <textarea id="family_names" name="family_names" rows="2" class="block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" placeholder="List names and relationships"></textarea>
+                        </div>
+                    </div>
+                    
+                    <!-- Question 2 -->
+                    <div class="question-card pl-4 py-4 rounded-lg">
+                        <label class="block text-gray-700 font-medium mb-2">2. Do you have a job or business in your home country?</label>
+                        <div class="flex space-x-6 mt-3">
+                            <div class="flex items-center">
+                                <input type="radio" id="home_job_yes" name="home_job" value="yes" class="h-4 w-4 text-blue-600 focus:ring-blue-500">
+                                <label for="home_job_yes" class="ml-2 block text-gray-700">Yes</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="radio" id="home_job_no" name="home_job" value="no" class="h-4 w-4 text-blue-600 focus:ring-blue-500">
+                                <label for="home_job_no" class="ml-2 block text-gray-700">No</label>
+                            </div>
+                        </div>
+                        <div id="home_job_details" class="mt-3 hidden">
+                            <label for="home_employment" class="block text-sm text-gray-600 mb-1">Details about your job/business</label>
+                            <textarea id="home_employment" name="home_employment" rows="3" class="block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" placeholder="Company name, position, how long employed"></textarea>
+                        </div>
+                    </div>
+                    
+                    <!-- Question 3 -->
+                    <div class="question-card pl-4 py-4 rounded-lg">
+                        <label class="block text-gray-700 font-medium mb-2">3. Do you have other connections in your country?</label>
+                        <div class="flex space-x-6 mt-3">
+                            <div class="flex items-center">
+                                <input type="radio" id="connections_home_yes" name="connections_home" value="yes" class="h-4 w-4 text-blue-600 focus:ring-blue-500">
+                                <label for="connections_home_yes" class="ml-2 block text-gray-700">Yes</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="radio" id="connections_home_no" name="connections_home" value="no" class="h-4 w-4 text-blue-600 focus:ring-blue-500">
+                                <label for="connections_home_no" class="ml-2 block text-gray-700">No</label>
+                            </div>
+                        </div>
+                        <div id="connections_home_details" class="mt-3 hidden">
+                            <label for="home_connections" class="block text-sm text-gray-600 mb-1">What connections do you have?</label>
+                            <textarea id="home_connections" name="home_connections" rows="2" class="block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" placeholder="Community organizations, clubs, associations, etc."></textarea>
+                        </div>
+                    </div>
+                    
+                    <!-- Question 4 -->
+                    <div class="question-card pl-4 py-4 rounded-lg">
+                        <label for="return_plans" class="block text-gray-700 font-medium mb-2">4. What are your plans to return to your country after your visa expires?</label>
+                        <textarea id="return_plans" name="return_plans" rows="3" class="mt-2 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" placeholder="Explain your reasons for returning (job, family, studies, etc.)"></textarea>
+                    </div>
+                </div>
+                
+                <div class="flex justify-between mt-8">
+                    <button type="button" class="prev-section px-6 py-3 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition duration-300 shadow-md nav-btn">
+                        ← Previous
+                    </button>
+                    <button type="button" class="next-section px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-300 shadow-md hover:shadow-lg nav-btn">
+                        Next: General Questions →
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Section 5: General Questions -->
+            <div class="form-section p-6 md:p-8 hidden" data-section="5">
+                <h2 class="text-xl font-semibold text-gray-800 mb-6 flex items-center">
+                    <span class="flex items-center justify-center w-8 h-8 bg-blue-600 text-white rounded-full mr-3">5</span>
+                    General Questions
+                </h2>
+                
+                <div class="space-y-6">
+                    <!-- Question 1 -->
+                    <div class="question-card pl-4 py-4 rounded-lg">
+                        <label class="block text-gray-700 font-medium mb-2">1. Do you have any criminal record?</label>
+                        <div class="flex space-x-6 mt-3">
+                            <div class="flex items-center">
+                                <input type="radio" id="criminal_no" name="criminal_record" value="no" class="h-4 w-4 text-blue-600 focus:ring-blue-500">
+                                <label for="criminal_no" class="ml-2 block text-gray-700">No</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="radio" id="criminal_yes" name="criminal_record" value="yes" class="h-4 w-4 text-blue-600 focus:ring-blue-500">
+                                <label for="criminal_yes" class="ml-2 block text-gray-700">Yes</label>
+                            </div>
+                        </div>
+                        <div id="criminal_details" class="mt-3 hidden">
+                            <label for="criminal_explanation" class="block text-sm text-gray-600 mb-1">Please explain</label>
+                            <textarea id="criminal_explanation" name="criminal_explanation" rows="3" class="block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" placeholder="Provide details about any criminal record"></textarea>
+                        </div>
+                    </div>
+                    
+                    <!-- Question 2 -->
+                    <div class="question-card pl-4 py-4 rounded-lg">
+                        <label for="additional_info" class="block text-gray-700 font-medium mb-2">2. Any additional information you'd like to provide?</label>
+                        <textarea id="additional_info" name="additional_info" rows="3" class="mt-2 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" placeholder="Other relevant information for your visa application"></textarea>
+                    </div>
+                    
+                    <!-- Document Upload -->
+                    <div class="question-card pl-4 py-4 rounded-lg bg-blue-50 border border-blue-100">
+                        <label class="block text-gray-700 font-medium mb-3">3. Upload Supporting Documents (if applicable)</label>
+                        <div class="space-y-4">
+                            <div>
+                                <label for="passport_upload" class="block text-sm text-gray-600 mb-1">Passport Copy</label>
+                                <input type="file" id="passport_upload" name="passport_upload" class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
+                            </div>
+                            <div>
+                                <label for="financial_upload" class="block text-sm text-gray-600 mb-1">Financial Documents</label>
+                                <input type="file" id="financial_upload" name="financial_upload" class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
+                            </div>
+                            <div>
+                                <label for="other_upload" class="block text-sm text-gray-600 mb-1">Other Documents</label>
+                                <input type="file" id="other_upload" name="other_upload" class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Agreement -->
+                    <div class="question-card pl-4 py-4 rounded-lg bg-blue-50 border border-blue-100">
+                        <div class="flex items-start">
+                            <input type="checkbox" id="agreement" name="agreement" required class="h-5 w-5 text-blue-600 focus:ring-blue-500 mt-1">
+                            <label for="agreement" class="ml-3 block text-gray-700">
+                                <span class="font-medium">I certify that all information provided is true and correct to the best of my knowledge.</span> I understand that providing false information may result in visa denial and could make me permanently ineligible for a US visa.
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flex justify-between mt-8">
+                    <button type="button" class="prev-section px-6 py-3 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition duration-300 shadow-md nav-btn">
+                        ← Previous
+                    </button>
+                    <button type="submit" class="px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition duration-300 shadow-md hover:shadow-lg nav-btn flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                        </svg>
+                        Submit Application
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Section 6: Confirmation -->
+            <div class="form-section p-6 md:p-8 hidden text-center" data-section="6">
+                <div class="max-w-md mx-auto">
+                    <div class="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                        </svg>
+                    </div>
+                    <h2 class="text-2xl font-bold text-gray-800 mb-3">Application Submitted Successfully!</h2>
+                    <p class="text-gray-600 mb-6">Thank you for completing your US visa interview preparation form. Your responses have been recorded.</p>
+                    <div class="bg-blue-50 p-4 rounded-lg border border-blue-100 text-left">
+                        <h3 class="font-medium text-blue-800 mb-2">Next Steps:</h3>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1">
+                            <li>Review your answers for accuracy</li>
+                            <li>Prepare supporting documents</li>
+                            <li>Schedule your visa interview</li>
+                        </ul>
+                    </div>
+                    <button type="button" id="new-application" class="mt-8 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-300 shadow-md hover:shadow-lg nav-btn">
+                        Start New Application
+                    </button>
+                </div>
+            </div>
+        </form>
+        
+        <!-- Footer -->
+        <footer class="mt-12 text-center text-gray-500 text-sm animate-fade-in" style="animation-delay: 0.4s;">
+            <p>© 2023 US Visa Application Portal. This form is for preparation purposes only.</p>
+            <p class="mt-1">Official visa applications must be made through proper government channels.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Form navigation
+        document.querySelectorAll('.next-section').forEach(button => {
+            button.addEventListener('click', () => {
+                const currentSection = button.closest('.form-section');
+                const nextSectionNum = parseInt(currentSection.dataset.section) + 1;
+                const nextSection = document.querySelector(`.form-section[data-section="${nextSectionNum}"]`);
+                
+                // Validate current section
+                let isValid = true;
+                const requiredFields = currentSection.querySelectorAll('[required]');
+                requiredFields.forEach(field => {
+                    if (!field.value && !field.checked) {
+                        field.classList.add('border-red-500');
+                        isValid = false;
+                    } else {
+                        field.classList.remove('border-red-500');
+                    }
+                });
+                
+                if (!isValid) {
+                    alert('Please complete all required fields before proceeding.');
+                    return;
+                }
+                
+                // Update progress bar and section counter
+                const progress = (nextSectionNum / 6) * 100;
+                document.getElementById('progressBar').style.width = `${progress}%`;
+                document.getElementById('currentSection').textContent = nextSectionNum;
+                
+                // Switch sections
+                currentSection.classList.add('hidden');
+                nextSection.classList.remove('hidden');
+                nextSection.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+        
+        document.querySelectorAll('.prev-section').forEach(button => {
+            button.addEventListener('click', () => {
+                const currentSection = button.closest('.form-section');
+                const prevSectionNum = parseInt(currentSection.dataset.section) - 1;
+                const prevSection = document.querySelector(`.form-section[data-section="${prevSectionNum}"]`);
+                
+                // Update progress bar and section counter
+                const progress = ((prevSectionNum - 1) / 6) * 100;
+                document.getElementById('progressBar').style.width = `${progress}%`;
+                document.getElementById('currentSection').textContent = prevSectionNum;
+                
+                // Switch sections
+                currentSection.classList.add('hidden');
+                prevSection.classList.remove('hidden');
+                prevSection.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+        
+        // Show/hide conditional fields
+        function setupConditionalFields() {
+            // Previous visits details
+            document.getElementById('visited_yes')?.addEventListener('change', function() {
+                document.getElementById('visited_details').classList.toggle('hidden', !this.checked);
+            });
+            
+            // Other plans details
+            document.getElementById('other_plans_yes')?.addEventListener('change', function() {
+                document.getElementById('other_plans_details').classList.toggle('hidden', !this.checked);
+            });
+            
+            // Friend relatives details
+            document.getElementById('relatives_yes')?.addEventListener('change', function() {
+                document.getElementById('relatives_details').classList.toggle('hidden', !this.checked);
+            });
+            
+            // Other connections details
+            document.getElementById('connections_yes')?.addEventListener('change', function() {
+                document.getElementById('connections_details').classList.toggle('hidden', !this.checked);
+            });
+            
+            // Trip payer details
+            document.querySelectorAll('input[name="trip_payer"]').forEach(radio => {
+                radio.addEventListener('change', function() {
+                    const showPayerDetails = this.value === 'family' || this.value === 'friend' || this.value === 'other';
+                    document.getElementById('payer_details').classList.toggle('hidden', !showPayerDetails);
+                });
+            });
+            
+            // Financial docs details
+            document.getElementById('docs_yes')?.addEventListener('change', function() {
+                document.getElementById('docs_details').classList.toggle('hidden', !this.checked);
+            });
+            
+            // Employment details
+            document.getElementById('employment_yes')?.addEventListener('change', function() {
+                document.getElementById('employment_details').classList.toggle('hidden', !this.checked);
+            });
+            
+            // Assets details
+            document.getElementById('assets_yes')?.addEventListener('change', function() {
+                document.getElementById('assets_details').classList.toggle('hidden', !this.checked);
+            });
+            
+            // Family details
+            document.getElementById('family_yes')?.addEventListener('change', function() {
+                document.getElementById('family_details').classList.toggle('hidden', !this.checked);
+            });
+            
+            // Home job details
+            document.getElementById('home_job_yes')?.addEventListener('change', function() {
+                document.getElementById('home_job_details').classList.toggle('hidden', !this.checked);
+            });
+            
+            // Home connections details
+            document.getElementById('connections_home_yes')?.addEventListener('change', function() {
+                document.getElementById('connections_home_details').classList.toggle('hidden', !this.checked);
+            });
+            
+            // Criminal record details
+            document.getElementById('criminal_yes')?.addEventListener('change', function() {
+                document.getElementById('criminal_details').classList.toggle('hidden', !this.checked);
+            });
+            
+            // Other radio options
+            document.querySelectorAll('input[type="radio"][value="other"]').forEach(radio => {
+                radio.addEventListener('change', function() {
+                    const otherInput = this.closest('div').nextElementSibling;
+                    if (this.checked) {
+                        otherInput.classList.remove('hidden');
+                        otherInput.focus();
+                    } else {
+                        otherInput.classList.add('hidden');
+                    }
+                });
+            });
+            
+            // Other checkbox options
+            document.querySelectorAll('input[type="checkbox"][name$="other"]').forEach(checkbox => {
+                checkbox.addEventListener('change', function() {
+                    const otherInput = this.closest('div').nextElementSibling;
+                    otherInput.classList.toggle('hidden', !this.checked);
+                    if (this.checked) otherInput.focus();
+                });
+            });
+        }
+        
+        // Form submission
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Validate agreement checkbox
+            if (!document.getElementById('agreement').checked) {
+                alert('You must certify that all information is true and correct before submitting.');
+                return;
+            }
+            
+            // Show confirmation section
+            const currentSection = document.querySelector('.form-section:not(.hidden)');
+            const confirmationSection = document.querySelector('.form-section[data-section="6"]');
+            
+            currentSection.classList.add('hidden');
+            confirmationSection.classList.remove('hidden');
+            document.getElementById('progressBar').style.width = '100%';
+            document.getElementById('currentSection').textContent = '6';
+            
+            // Scroll to top of confirmation
+            confirmationSection.scrollIntoView({ behavior: 'smooth' });
+        });
+        
+        // New application button
+        document.getElementById('new-application')?.addEventListener('click', function() {
+            // Reset form
+            document.querySelector('form').reset();
+            
+            // Hide all sections except first
+            document.querySelectorAll('.form-section').forEach(section => {
+                section.classList.add('hidden');
+            });
+            document.querySelector('.form-section[data-section="1"]').classList.remove('hidden');
+            
+            // Reset progress
+            document.getElementById('progressBar').style.width = '16%';
+            document.getElementById('currentSection').textContent = '1';
+            
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        
+        // Initialize conditional fields
+        document.addEventListener('DOMContentLoaded', function() {
+            setupConditionalFields();
+        });
+    </script>
+</body>
+</html>
